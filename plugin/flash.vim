@@ -100,6 +100,14 @@ function! SelectionAction(incrementNumber)
     call PrintSettings()
 endfunction
 
+function! ResetValues()
+    let g:v1=0
+    let g:v2=0
+    let g:l1=0
+    let g:l2=0
+    call PrintSettings()
+endfunction
+
 " fn: tab key handler
 function! DoTab()
     if (g:flash_modifyBit == 3)
@@ -123,10 +131,12 @@ function! DoF()
         map <Tab> :call DoTab()<CR>
         map <Up> :call SelectionAction(1)<CR>
         map <Down> :call SelectionAction(-1)<CR>
+        map r :call ResetValues()<CR>
     else
         unmap <Tab>
         unmap <Up>
         unmap <Down>
+        unmap r
     endif
 endfunction
 
