@@ -7,12 +7,6 @@
 
 
 """""""""""""
-" define highlight class
-"
-highlight FleetingFlashyFiretrucks ctermfg=red
-
-
-"""""""""""""
 " global vars
 "
 let g:flash_flashMode=0
@@ -29,6 +23,7 @@ let g:l2=0
 
 " fn: highlight selection of text
 function! HighlightSelection(v1,v2,l1,l2)
+    highlight FleetingFlashyFiretrucks ctermfg=red
     execute 'match FleetingFlashyFiretrucks /\%<'.a:v1.'v.\%>'.a:v2.'v.\%<'.a:l1.'l.\%>'.a:l2.'l/'
 
     let g:v1=a:v1
