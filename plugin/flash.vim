@@ -17,10 +17,10 @@ highlight FleetingFlashyFiretrucks ctermfg=red
 "
 let g:flash_flashMode=0
 let g:flash_modifyBit=0
-let g:v1=8
-let g:v2=7
-let g:l1=6
-let g:l2=4
+let g:v1=0
+let g:v2=0
+let g:l1=0
+let g:l2=0
 
 
 """""""""""""
@@ -84,6 +84,16 @@ function! SelectionAction(incrementNumber)
         let g:l2 = g:l2 + a:incrementNumber
     else
         let g:v1 = g:v1 + a:incrementNumber
+    endif
+
+    if g:v1 < 0
+        let g:v1=0
+    elseif g:v2 < 0
+        let g:v2=0
+    elseif g:l1 < 0
+        let g:l1=0
+    elseif g:l2 < 0
+        let g:l2=0
     endif
 
     call HighlightSelection(g:v1,g:v2,g:l1,g:l2)
