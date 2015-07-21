@@ -122,8 +122,10 @@ endfunction
 function! DoF()
     if (g:flash_flashMode == 1)
         let g:flash_flashMode = 0
+        echo "flash mode off"
     elseif (g:flash_flashMode == 0)
         let g:flash_flashMode = 1
+        echo "flash mode on"
     endif
 
     if (g:flash_flashMode == 1)
