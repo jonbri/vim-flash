@@ -1,9 +1,9 @@
 " flash.vim - Draw attention
 
-" if exists("g:loaded_flash") || &cp || v:version < 700
-"   finish
-" endif
-" let g:loaded_flash = 1
+if exists("g:loaded_flash") || &cp || v:version < 700
+  finish
+endif
+let g:loaded_flash = 1
 
 
 """""""""""""
