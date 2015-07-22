@@ -35,6 +35,8 @@ endfunction
 " fn: remove all highlighting
 function! RemoveHighlighting()
     match none
+    2match none
+    3match none
 endfunction
 
 " fn: flash at current location
@@ -96,6 +98,7 @@ function! SelectionAction(incrementNumber)
 endfunction
 
 function! ResetValues()
+    call RemoveHighlighting()
     let g:v1=0
     let g:v2=0
     let g:l1=0
