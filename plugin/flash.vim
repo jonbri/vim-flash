@@ -23,6 +23,9 @@ endfunction
 
 " fn: flash at current location
 function! Flash()
+    " go to start of word
+    normal b
+
     " highlight cursor
     call HighlightCursor()
 
@@ -34,8 +37,6 @@ function! Flash()
     " show cross-hairs
     set cursorline cursorcolumn
     redraw
-
-    normal b
 
     " sleep
     execute "sleep ".g:flash_interval
