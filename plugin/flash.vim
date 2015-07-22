@@ -21,11 +21,15 @@ function! RemoveHighlighting()
     match none
 endfunction
 
-" fn: flash at current location
-function! Flash()
+function! SearchAndFlash()
     " go to start of word
     normal b
 
+    call Flash()
+endfunction
+
+" fn: flash at current location
+function! Flash()
     " highlight cursor
     call HighlightCursor()
 
@@ -46,6 +50,7 @@ function! Flash()
     set nocursorline nocursorcolumn
 endfunction
 
+
 """""""""""""
 " mappings
 "
@@ -54,5 +59,5 @@ endfunction
 nnoremap <leader>f :call Flash()<CR>
 
 " center and flash on forward search with leader
-nnoremap <leader>n nzz :call Flash()<CR>
+nnoremap <leader>n nzz :call SearchAndFlash()<CR>
 
