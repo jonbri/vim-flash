@@ -22,9 +22,13 @@ let g:l2=0
 "
 
 " fn: highlight selection of text
+" l -> line
+" v -> virtual column
+" c -> column
 function! HighlightSelection(v1,v2,l1,l2)
     highlight FleetingFlashyFiretrucks ctermfg=red
-    execute 'match FleetingFlashyFiretrucks /\%<'.a:v1.'v.\%>'.a:v2.'v.\%<'.a:l1.'l.\%>'.a:l2.'l/'
+    " execute 'match FleetingFlashyFiretrucks /\%<'.a:v1.'v.\%>'.a:v2.'v.\%<'.a:l1.'l.\%>'.a:l2.'l/'
+    execute 'match FleetingFlashyFiretrucks /\%<'.a:c1.'v.\%>'.a:v2.'v.\%<'.a:l1.'l.\%>'.a:l2.'l/'
 
     let g:v1=a:v1
     let g:v2=a:v2
@@ -41,14 +45,23 @@ endfunction
 
 " fn: flash at current location
 function! Flash()
+    " highlight cursor value
+    highlight FleetingFlashyFiretrucks ctermfg=red
+    execute 'match FleetingFlashyFiretrucks /\%#/'
+
+    " determine delay
     if !exists("g:flash_interval")
         let g:flash_interval="200m"
     endif
 
+    " show cross-hairs
     set cursorline cursorcolumn
-    call HighlightSelection(8,7,6,4)
     redraw
+
+    " sleep
     execute "sleep ".g:flash_interval
+
+    " after the delay
     call RemoveHighlighting()
     set nocursorline nocursorcolumn
 endfunction
