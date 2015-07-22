@@ -35,6 +35,8 @@ function! Flash()
     set cursorline cursorcolumn
     redraw
 
+    normal b
+
     " sleep
     execute "sleep ".g:flash_interval
 
