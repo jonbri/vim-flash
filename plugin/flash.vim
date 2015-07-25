@@ -23,7 +23,7 @@ endfunction
 
 function! SearchAndFlash()
     " go to start of word
-    normal b
+    " normal b
 
     call Flash()
 endfunction
