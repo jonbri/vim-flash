@@ -52,6 +52,14 @@ endfunction
 
 
 """""""""""""
+" autocmd
+"
+
+" when switching windows, flash the screen
+autocmd WinEnter * call Flash()
+
+
+"""""""""""""
 " mappings
 "
 
