@@ -56,7 +56,7 @@ endfunction
 "
 
 " when switching windows, flash the screen
-autocmd WinEnter * call Flash()
+" autocmd WinEnter * call Flash()
 
 
 """""""""""""
