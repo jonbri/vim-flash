@@ -1,0 +1,21 @@
+*flash.txt*  Draw attention
+
+Author:  Jonathan Brink
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION                                    *flash*
+
+Mappings and autocmd's to help see focused areas of the screen quickly.
+
+When switching windows, Flash() is called.
+
+                                                *flash-<leader> @*
+<leader>f                      Make the area under cursor flash
+
+ABOUT                                           *flash-about*
+
+Grab the latest version or report a bug on GitHub:
+
+https://github.com/jonbri/vim-flash
+
+ vim:tw=78:et:ft=help:norl:
